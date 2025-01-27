@@ -31,7 +31,7 @@ function getRandomIntInclusive(min, max) {
 let randomChoice = getRandomIntInclusive(1, 3);
 
 // Check randomChoice
-console.log(randomChoice);
+//console.log(randomChoice);
 
 // Log in console result depending on the generated random number
 if (randomChoice == 1) {
@@ -41,3 +41,22 @@ if (randomChoice == 1) {
 } else {
     console.log('scissors')
 }
+
+//Create a new function named getHumanChoice.
+function getHumanChoice() {
+    let sign = prompt("Lwt's play! Type \"rock\", \"paper\", or \"scissors\"");
+    if (sign.toLowerCase() === "rock") {
+        return "rock";
+    } else if (sign.toLowerCase() === "paper") {
+        return "paper";
+    } else if (sign.toLowerCase() === "scissors") {
+        return "scissors";
+    } else {
+        alert("Invalid choice! Please type \"rock\", \"paper\", or \"scissors\".");
+        return getHumanChoice(); // Recursively call the function to ask again
+    }
+}
+
+// Store the result in a variable
+let humanChoice = getHumanChoice();
+console.log('Your choice is ', humanChoice);
