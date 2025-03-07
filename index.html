@@ -4,10 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <!-- Include meta tags and title. Add a link to CSS for styling (optional) -->
     <link rel="stylesheet" href="styles.css">
-    <script src="javascript.js" defer></script>
+    <script src="script.js"></script>
 </head>
+
 <body>
+   <!-- Create a heading for the game title
+    - Create three buttons for Rock, Paper, and Scissors
+        - Each button should have an id corresponding to its choice
+        - Each button should have a common class for easy selection in JavaScript -->
+    <div class="page">
+        
+        <div class="header">
+            <h1 id="pageTitle"> Rock, Paper, and Scissors </h1>
+        </div>
+        
+        <div class="selection">
+            <H3> Select your choice: </H3>
+            <div class="buttons">
+                <button id="rock" class="button"> Rock </button>
+                <button id="paper" class="button"> Paper </button>
+                <button id="scissors" class="button"> Scissors </button>
+            </div>
+        </div>
     
+        <!-- - Create a section to display the game results
+            - Display the player's choice
+            - Display the computer's choice
+            - Show the round result (win/lose/tie)
+            - Show the current score (human vs. computer) -->
+        <div class="results">
+            <p class="playerChoice">Players choice: </p>
+            <p class="computerChoice">Computer choice: </p>
+            <p class="result">Result:</p>
+            <p class="currentScore">Current score:</p>
+        <div>
+            
+    </div>
 </body>
 </html>

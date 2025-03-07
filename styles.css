@@ -1,0 +1,65 @@
+* {
+    color: rgb(0, 0, 0);
+    align-items: center;
+    /* outline: 2px solid red; */
+}
+
+.page {
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    outline: 4px solid black;
+    width: 480px;
+    margin-top: 60px;
+    gap: 24px;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: underline;
+}
+
+.selection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 16px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 8px
+}
+
+.button {
+    text-transform: uppercase;
+    text-decoration: solid;
+    outline-width: 2;
+    width: 120px;
+    padding: 8px;
+}
+
+#rock {
+    background-color: rgb(205, 205, 205);
+}
+
+#paper {
+    background-color: rgb(255, 255, 235);
+}
+
+#scissors {
+    background-color: rgb(222, 255, 255);
+}
+
+.results {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.result {
+    font-weight: 600;
+}
