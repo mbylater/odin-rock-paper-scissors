@@ -36,7 +36,6 @@ const playRound = document.querySelector(".buttons");
 playRound.addEventListener("click", () => {
 
     // Document humanChoice
-    console.log(humanChoice);
     const playerChoiceAnnouncement = document.querySelector('.playerChoice');
     playerChoiceAnnouncement.textContent = humanChoice;
 
