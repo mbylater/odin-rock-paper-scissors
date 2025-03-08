@@ -42,22 +42,15 @@
     padding: 8px;
 }
 
-#rock {
-    background-color: rgb(205, 205, 205);
-}
-
-#paper {
-    background-color: rgb(255, 255, 235);
-}
-
-#scissors {
-    background-color: rgb(222, 255, 255);
+#nextRound {
+    margin-top: 20px;
 }
 
 .results {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    margin-bottom: 40px;
 }
 
 .result {

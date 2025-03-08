@@ -1,73 +1,74 @@
-// //Computer Choice
+// Create function getComputerChoice
+function getComputerChoice () {
+    // Generate random number between 0 and 2    
+    const getRandomInt = (max) => Math.floor(Math.random() * max);
+    const randomInt = getRandomInt(3);
+    // To each number assign one computer choice and reurn it
+    if (randomInt === 0) {
+        return "rock"
+    } else if (randomInt === 1) {
+        return "paper"
+    } else {
+        return "scissors"
+    }
+}
 
-// // Function to get a random integer between two numbers (inclusive)
-// function getRandomIntInclusive(min, max) {
-//     const minCeiled = Math.ceil(min);
-//     const maxFloored = Math.floor(max);
-//     return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled); 
-// }
+// Write logic to get humanChoice when they push a choice button
+let humanChoice;
 
-// // Function to get the computer's choice
-// function getComputerChoice() {
-//     let computerChoice = getRandomIntInclusive(1, 3);
-//     if (computerChoice === 1) {
-//         console.log('Computer choice is rock');
-//         return 'rock';
-//     } else if (computerChoice === 2) {
-//         console.log('Computer choice is paper');
-//         return 'paper';
-//     } else {
-//         console.log('Computer choice is scissors');
-//         return 'scissors';
-//     }
-// }
+document.querySelector('#rock').addEventListener("click", () => {
+    humanChoice = 'rock';
+});
 
-// // Global scores
-// let humanScore = 0;
-// let computerScore = 0;
+document.querySelector('#paper').addEventListener("click", () => {
+    humanChoice = 'paper';
+});
 
-// //Select results
+document.querySelector('#scissors').addEventListener("click", () => {
+    humanChoice = 'scissors';
+});
 
+// Establish global scores
+let scoreHuman = 0;
+let scoreComputer = 0;
 
-// // Function to play a single round
-// function playRound(humanChoice, computerChoice) {
-//     console.log(`You chose: ${humanChoice}`);
-//     console.log(`Computer chose: ${computerChoice}`);
+const playRound = document.querySelector(".buttons");
+playRound.addEventListener("click", () => {
 
-//     if (
-//         (humanChoice === 'rock' && computerChoice === 'scissors') ||
-//         (humanChoice === 'paper' && computerChoice === 'rock') ||
-//         (humanChoice === 'scissors' && computerChoice === 'paper')
-//     ) {
-//         humanScore++;
-//         console.log('You win this round!');
-//     } else if (
-//         (computerChoice === 'rock' && humanChoice === 'scissors') ||
-//         (computerChoice === 'paper' && humanChoice === 'rock') ||
-//         (computerChoice === 'scissors' && humanChoice === 'paper')
-//     ) {
-//         computerScore++;
-//         console.log('You lose this round!');
-//     } else {
-//         console.log('It\'s a tie!');
-//     }
+    // Document humanChoice
+    console.log(humanChoice);
+    const playerChoiceAnnouncement = document.querySelector('.playerChoice');
+    playerChoiceAnnouncement.textContent = humanChoice;
 
-//     console.log(`Score: Human ${humanScore} - Computer ${computerScore}`);
-// }
+    // Call getComputerChoice function and document
+    const computerChoice = getComputerChoice();
+    const computerChoiceAnnouncement = document.querySelector('.computerChoice');
+    computerChoiceAnnouncement.textContent = computerChoice;
+    const winnerAnnouncement = document.querySelector('.result');
 
-// let buttons = document.querySelectorAll(".btn");
+    // Write logic for who won
+    if (computerChoice === humanChoice) {
+        // its a tie announcement - no change in score
+        winnerAnnouncement.textContent = "it's a tie! 🤝";
+    
+        } else if (
+        (computerChoice === 'rock' && humanChoice === 'scissors') ||
+        (computerChoice === 'paper' && humanChoice === 'rock') ||
+        (computerChoice === 'scissors' && humanChoice === 'paper')
+    ) {
+        // computers win - computer score increases
+        winnerAnnouncement.textContent = "computer wins! 🤖";
+        scoreComputer ++;
+    } else {
+        //human wins - human score increases
+        winnerAnnouncement.textContent = "player wins! 🦸";
+        scoreHuman ++;
+    }
 
-// buttons.forEach((button) => {
-//     button.addEventListener("click", funtion() {
-//         let humanChoice = button.id;
-//         let comuterChoice = getComputerChoice;
+    // Update displayed results
+    const displayComputerResult = document.querySelector('.computerScore');
+    displayComputerResult.textContent = scoreComputer;
+    const displayHumanResult = document.querySelector('.humanScore');
+    displayHumanResult.textContent = scoreHuman;
 
-//         playRound(humanChoice, computerChoice);
-
-//         console.log(`Final Score: Human ${humanScore} - Computer ${computerScore}`)
-
-//     });
-// });
-
-
-// playGame();
+});

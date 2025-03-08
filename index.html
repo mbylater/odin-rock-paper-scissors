@@ -7,7 +7,6 @@
 
     <!-- Include meta tags and title. Add a link to CSS for styling (optional) -->
     <link rel="stylesheet" href="styles.css">
-    <script src="script.js"></script>
 </head>
 
 <body>
@@ -36,12 +35,15 @@
             - Show the round result (win/lose/tie)
             - Show the current score (human vs. computer) -->
         <div class="results">
-            <p class="playerChoice">Players choice: </p>
-            <p class="computerChoice">Computer choice: </p>
-            <p class="result">Result:</p>
-            <p class="currentScore">Current score:</p>
+            <p><span>Players choice: </span><span class="playerChoice"></span></p>
+            <p><span>Computer choice: </span><span class="computerChoice"></span></p>
+            <p><strong>Result: </strong><span class="result"></span></p>
+            <p><span>Current score:</span><span class="currentScore"></span></p>
+            <p><span>🤖: </span> <span class="computerScore"> 0 </span> <span> - 🦸: </span> <span class="humanScore"> 0 </span></p>
         <div>
-            
+
     </div>
+
+    <script src="javascript.js"></script>
 </body>
 </html>
